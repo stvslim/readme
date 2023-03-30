@@ -20,7 +20,7 @@ Run steps:
 * ```docker-build-n-push.yml```
 * ```run-ansible-playbook.yml```
 
-#### staging.yaml
+#### ```staging.yaml```
 
 Trigger on push tag event with mask ```vX.X.X-rc.X```
 Run steps:
@@ -33,11 +33,11 @@ Files describing pipeline steps:
 
 #### ```docker-build-n-push.yml```
 
-Build container and publish to repository
+Build container and publish to registry
 
 ##### Variables
 * ```DOCKER_DIR``` - Location of  Dockerfile file
-*``` APP_ENV_PREFIX``` - The prefix used to pass github secrets as env vars to the docker build environment.
+* ```APP_ENV_PREFIX``` - The prefix used to pass github secrets as env vars to the docker build environment.
 * ```AWS_REGION``` - AWS region
 * ```ECR_REPOSITORY``` - Target ECR for pushing image
 
@@ -48,9 +48,9 @@ Deploy conteiners to hosts via ansible
 ##### Variables
 
 * ```DEVOPS_BRANCH``` - git branch with ansible
-* ```DEVOPS_REPO``` - gt repo with ansible
+* ```DEVOPS_REPO``` - git repository with ansible
 * ```ENV``` - working environment (origin-stage/origin-worker)
-* ```APP_ENV_PREFIX``` - The prefix used to pass github secrets as env vars to the application working environment.
+* ```APP_ENV_PREFIX``` - The prefix used to pass github secrets as env vars to the application working environment
 * ```IMAGE_TAG``` - Image tag to deploy
 * ```ecr_info``` - ECR repository credentials
 * ```nat_ip``` - IP of NAT gateway instance (used as gateway)
